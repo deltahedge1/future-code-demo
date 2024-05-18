@@ -14,4 +14,7 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero.")
     return a / b
 
+def square(a):
+    return a^2
+
 __version__ = '0.1.0'

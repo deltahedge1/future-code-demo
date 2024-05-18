@@ -27,7 +27,7 @@ jobs:
 
     - name: Run tests with coverage
       run: |
-        python -m pytest --cov=calculator tests/
+        python -m pytest --cov=calculator --cov-report=html
 
     - name: Upload coverage report
       uses: actions/upload-artifact@v3

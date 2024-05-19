@@ -17,4 +17,7 @@ def divide(a, b):
 def square(a):
     return a^2
 
+def square_root(a):
+    return a^2
+
 __version__ = '0.1.1'

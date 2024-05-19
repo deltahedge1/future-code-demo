@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write  # Grant write permissions
-  
+
 jobs:
   version:
     runs-on: ubuntu-latest
@@ -24,10 +24,14 @@ jobs:
       - name: Install bump2version
         run: pip install bump2version
 
+      
+      - name: Install bump2version
+        run: bump2version patch
+
       - name: Configure Git
         run: |
-          git config --global user.name 'abc'
-          git config --global user.email 'abce@gmail.com'
+          git config --global user.name 'deltahedge1'
+          git config --global user.email 'ihassan1@kpmg.com.au'
 
       - name: Push changes
         env:

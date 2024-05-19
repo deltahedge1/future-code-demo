@@ -55,14 +55,13 @@ jobs:
       run: |
         git config --global user.name 'deltahedge1'
         git config --global user.email 'ihassan1@kpmg.com.au'
-        echo "machine github.com login YOUR_GITHUB_USERNAME password ${{ secrets.PAT }}" > ~/.netrc
-        git remote set-url origin "https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git"
 
     - name: Update version
       run: bump2version patch
 
-    - name: Commit version bump
+    - name: Commit and push version bump
       run: |
-        git push origin main
+        git remote set-url origin https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+        git push origin HEAD:main
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}

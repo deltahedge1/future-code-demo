@@ -56,12 +56,14 @@ jobs:
         git config --global user.name 'deltahedge1'
         git config --global user.email 'ihassan1@kpmg.com.au'
 
-    - name: Update version
-      run: bump2version patch
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git config --global credential.helper store
+        git config --global credential.helper 'cache --timeout=3600'
+        echo "machine github.com login YOUR_GITHUB_USERNAME password ${{ secrets.PAT }}" > ~/.netrc
+        git remote set-url origin "https://github.com/${{ github.repository }}"
+        
     - name: Push version bump
       run: git push origin main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

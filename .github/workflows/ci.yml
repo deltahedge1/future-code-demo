@@ -60,4 +60,4 @@ jobs:
       run: bump2version patch
 
     - name: commit the changes
-    - uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v4

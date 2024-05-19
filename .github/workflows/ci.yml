@@ -63,7 +63,7 @@ jobs:
 
     - name: Commit version bump
       run: |
-        git add -u
+        git add .
         git commit -m "ci: bump version"
         git push origin HEAD:main
       env:

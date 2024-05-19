@@ -63,8 +63,8 @@ jobs:
 
     - name: Commit version bump
       run: |
-        git add .
-        git commit -m "ci: bump version to $NEW_VERSION"
-        git push origin $CURRENT_BRANCH
+        git add -u
+        git commit -m "ci: bump version"
+        git push origin HEAD:main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

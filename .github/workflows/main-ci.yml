@@ -21,18 +21,17 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install bump2version
-        run: pip install bump2version
-
-      
-      - name: Install bump2version
-        run: bump2version patch
-
       - name: Configure Git
         run: |
           git config --global user.name 'deltahedge1'
           git config --global user.email 'ihassan1@kpmg.com.au'
 
+      - name: Install bump2version
+        run: pip install bump2version
+      
+      - name: Install bump2version
+        run: bump2version patch
+      
       - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

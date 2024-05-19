@@ -34,32 +34,3 @@ jobs:
       with:
         name: coverage-report
         path: htmlcov/
-
-  version:
-    if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' }}
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        ref: ${{ github.head_ref }}
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - name: Install bump2version
-      run: pip install bump2version
-
-    - name: Configure Git and set credentials
-      run: |
-        git config --global user.name 'deltahedge1'
-        git config --global user.email 'ihassan1@kpmg.com.au'
-
-    - name: Update version
-      run: bump2version patch
-
-    - name: commit the changes
-      uses: stefanzweifel/git-auto-commit-action@v5

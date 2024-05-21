@@ -1,7 +1,7 @@
 # 🧮 Calculator
 
 
-version = '0.1.4'
+version = '0.1.5'
 
 Welcome to the **Calculator** project! This is a simple and easy-to-use calculator written in Python.
 

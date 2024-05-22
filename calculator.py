@@ -20,4 +20,4 @@ def square(a):
 def square_root(a):
     return a^2
 
-__version__ = '0.1.5'
+__version__ = '0.1.6'

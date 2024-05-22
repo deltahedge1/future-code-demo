@@ -24,3 +24,6 @@ Clone the repository:
 ```bash
 git clone https://github.com/deltahedge1/future-code-demo.git
 cd calculator
+
+//2024-05-22
+//Yi:Edit the chat function, to decrease the wait time
